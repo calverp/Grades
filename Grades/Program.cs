@@ -11,7 +11,7 @@ namespace Grades
         static void Main(string[] args)
         {
             GradeBook book = new GradeBook();
-            book.AddGrade(92);
+            book.AddGrade(95);
             book.AddGrade(89.5f);
             book.AddGrade(76);
 
