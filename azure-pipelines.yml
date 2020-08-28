@@ -47,9 +47,10 @@ steps:
     Package: '$(Build.ArtifactStagingDirectory2)/GradesNew.$(Build.BuildNumber).zip'
     Replace: 'false'
 
-- task: OctopusCreateRelease@4
+- task: OctopusMetadata@4
   inputs:
     OctoConnectedServiceName: 'OctopusCloudOps'
     Space: 'Spaces-23'
-    ProjectGroup: 'ProjectGroups-42'
-    ProjectName: 'Projects-181'
+    PackageId: 'GradesNew'
+    PackageVersion: '$(Build.BuildNumber)'
+    Replace: 'false'
