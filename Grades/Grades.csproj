@@ -52,6 +52,6 @@
     <None Include="App.config"/>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="OctoPack"/>
+    <PackageReference Include="OctoPack" Version="3.6.5"/>
   </ItemGroup>
 </Project>
