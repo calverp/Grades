@@ -43,14 +43,14 @@ steps:
 - task: OctopusPush@4
   inputs:
     OctoConnectedServiceName: 'OctopusCloudOps'
-    Space: 'Spaces-23'
+    Space: 'Spaces-304'
     Package: '$(Build.ArtifactStagingDirectory2)/GradesNew.$(Build.BuildNumber).zip'
     Replace: 'false'
 
 - task: OctopusMetadata@4
   inputs:
     OctoConnectedServiceName: 'OctopusCloudOps'
-    Space: 'Spaces-23'
+    Space: 'Spaces-304'
     PackageId: 'GradesNew'
     PackageVersion: '$(Build.BuildNumber)'
     Replace: 'false'
