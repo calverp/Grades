@@ -1,4 +1,5 @@
-step "Run a Script" {
+step "run-a-script" {
+    name = "Run a Script"
 
     action {
         action_type = "Octopus.Script"
@@ -7,6 +8,26 @@ step "Run a Script" {
             Octopus.Action.Script.ScriptSource = "Inline"
             Octopus.Action.Script.Syntax = "PowerShell"
         }
-        worker_pool = "Hosted Windows"
+        worker_pool = "hosted-windows"
+    }
+}
+
+step "get-details" {
+    name = "Get-Details"
+
+    action {
+        properties = {
+            Octopus.Action.RunOnServer = "true"
+            Octopus.Action.Template.Id = "ActionTemplates-3061"
+            Octopus.Action.Template.Version = "1"
+        }
+        worker_pool_variable = ""
+
+        git_dependencies {
+            default_branch = "master"
+            git_credential_id = "GitCredentials-2"
+            git_credential_type = "Library"
+            repository_uri = "https://github.com/calverp/Grades.git"
+        }
     }
 }
