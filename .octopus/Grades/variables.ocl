@@ -1,3 +1,9 @@
 variable "test" {
     value "new2" {}
 }
+
+variable "workerpool" {
+    type = "WorkerPool"
+
+    value "hosted-ubuntu" {}
+}
