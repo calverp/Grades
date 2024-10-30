@@ -5,5 +5,7 @@ variable "test" {
 variable "workerpool" {
     type = "WorkerPool"
 
-    value "hosted-ubuntu" {}
+    value "hosted-ubuntu" {
+        process = ["runbook/runbook"]
+    }
 }
