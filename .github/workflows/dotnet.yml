@@ -19,7 +19,7 @@ jobs:
       
 
     - name: Push a package to Octopus Deploy
-      uses: OctopusDeploy/push-package-action@v1.1.1
+      uses: OctopusDeploy/push-package-action@v3.0.4
       with:
         space: "PaulC"
         api_key: ${{ secrets.OCTOPUSSERVERAPIKEY }}
