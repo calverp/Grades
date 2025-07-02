@@ -62,6 +62,7 @@ step "deploy-to-iis" {
             Octopus.Action.Package.DownloadOnTentacle = "False"
             Octopus.Action.Package.FeedId = "github-repo"
             Octopus.Action.Package.PackageId = "calverp/Grades"
+            Octopus.Action.RunOnServer = "false"
         }
         worker_pool_variable = ""
 
@@ -73,5 +74,18 @@ step "deploy-to-iis" {
                 SelectionMode = "immediate"
             }
         }
+    }
+}
+
+step "script-template-test" {
+    name = "Script Template Test"
+
+    action {
+        properties = {
+            Octopus.Action.Template.Id = "ActionTemplates-4544"
+            Octopus.Action.Template.Version = "2"
+            SensitiveParameterTest = "#{sensitiveVarTest}"
+        }
+        worker_pool = "hosted-ubuntu"
     }
 }
